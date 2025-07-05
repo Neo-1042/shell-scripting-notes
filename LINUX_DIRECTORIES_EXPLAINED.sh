@@ -17,3 +17,49 @@ cd /etc/opt/ # Configuration files for /opt/ applications
 # SYSTEM-WIDE CONFIGURATION FILES
 # Examples:
 cd /etc/network/ ; cd /etc/systemd/ ; cd /etc/opt/
+###################################################################################################
+# URL = https://www.youtube.com/watch?v=uCqOgWR0g2o
+# Channel = Bread on Penguins
+###################################################################################################
+# Disk storage -> File System Format -> Directory Structure
+# (raw bytes)  ->  (FAT32, ext4) 	 -> (/usr/bin/.../)
+
+# A typical GNU/Linux installation would contain:
+
+/
+	bin -> usr/bin
+	boot
+	dev
+	etc
+	home
+	lib -> usr/lib
+	lib64 -> usr/lib
+	logs
+	lost+found
+	mnt
+	opt
+	proc
+	root
+	run
+	sbin -> usr/bin
+	srv
+	sys
+	tmp
+	usr
+	var
+
+# /bin/ -> usr/bin => Contains commands used by the system administrator and users
+# 	  There must be no subdirectories under /bin/
+# 	  Shells are located in here9
+# /sbin/ -> usr/bin => Contains system recovery commands
+#     e.g. fastboot, fsck (file system check and repair utility), reboot
+# /lib/ => libraries needed to run the previous binaries
+#     (C libraries, for example)
+# /boot/ => Static files of the boot loader, except config files not needed at boot time
+# 	  and the map installer. Thus, /boot/ stores data that is used before the kernel begins
+#     executing user-mode programs. (other config files go into /etc/ )
+# /dev/ => Device files (bluetooth, CPU, printers, etc.)
+# /etc/ => system-wide configuration files
+#     No binaries may be located under /etc/
+# *** Recomendation: have a separate ROOT partition on your Linux installation
+# /home/ => 
