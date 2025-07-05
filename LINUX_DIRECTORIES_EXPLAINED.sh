@@ -62,4 +62,23 @@ cd /etc/network/ ; cd /etc/systemd/ ; cd /etc/opt/
 # /etc/ => system-wide configuration files
 #     No binaries may be located under /etc/
 # *** Recomendation: have a separate ROOT partition on your Linux installation
-# /home/ => 
+# /home/ => User home directories
+#     The setup will differ from host to host. No program should assume any specific location
+#	  for a home directory, rather it should query for it. User-specific configuration files
+#     for applications are stored in here.
+# /logs/ => Logging files of the SYSLOG STANDARD
+# /lost+found/ => (EXT4) Suppose you end up with some file system corruption, and then you use
+	  fsck # file system check and repair utility, then
+#	  /lost+found/ will contain these corrupted/damaged files and folders.
+# /mnt/ => Mount point for a temporarily mounted filesystem.
+#     This directory is provided so that the system admin may temporarilly mount a filesystem
+#     as needed. For example, when you plugin a USB flash drive
+# /opt/ => Optional application software packages
+#	  e.g. /opt/chrome/
+# /proc/ => Contains process ID numbers
+# /run/ => Run-time variable data
+# /srv/ => Data for services provided by this system
+#     Historically, it was meant to host servers inside of your Linux system.
+#     e.g. An FTP/HTTP server
+# /tmp/ => Must be available for programs that require temporary files
+# 
