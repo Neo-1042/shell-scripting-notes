@@ -2,15 +2,17 @@
 
 # Logging and the syslog standard
 # Logs are the who, what, when, where and why
-# Script may run unattended (via a CRON)
+# Scripts may run unattended (e.g. via a CRON), and thus we need a logging mechanism
 
 # SYSLOG STANDARD > uses facilities and severities to categorize messages
-# [faacility].[level]
+# [facility].[level]
+# [facility].[severity] (equivalent)
 # Eliminates the need for each application to have a logging mechanism
 # Facilities => kern, user, mail, daemon, auth, local0, local7 
 #       (which part of the system)
 # Severities => emerg, alert, crit, err, warning, notice, info, debug
 # 		(which LogLevel)
+# DEFAULT = user.notice
 
 # Log file locations are configurable. They might be located at:
 cd /var/log/messages
@@ -22,8 +24,8 @@ cd /var/log/syslog
 logger "Message"
 logger -p local10.info "Message" # -p = priority
 logger -t myscript -p local0.info "Message" # -t = tag (mark every line in the log with the specified tag)
-logger -i -t myscript "Message" # -i = id (process id)
-logger -f /opt/rafainc/logs/logger_rrhg.log -f # Read the contents of the specified file into syslog
+logger -i -t myscript "Message" # -i = id (process id is included in the log messages)
+logger -f /var/rafainc/logs/logger_rrhg.log -f # Read the contents of the specified file into syslog
 
 logger -p local0.notice -t HOSTIDM -f /dev/idmc
 
@@ -41,6 +43,10 @@ function logit() {
 	if [ $LOG_LEVEL = 'ERROR' ] || $VERBOSE # Global variable
 	then
 		echo "${TIMESTAMP} ${HOST} ${PROGRAM_NAME}[${PID}] : ${LOG_LEVEL} ${MSG}" 
+	fi
 }
 
 logit crit The environment variable is not properly defined
+logit INFO "Processing data."
+===================================================================================================
+# Exercise 1

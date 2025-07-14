@@ -81,4 +81,6 @@ cd /etc/network/ ; cd /etc/systemd/ ; cd /etc/opt/
 #     Historically, it was meant to host servers inside of your Linux system.
 #     e.g. An FTP/HTTP server
 # /tmp/ => Must be available for programs that require temporary files
-# 
+=========================================================================================
+/dev/null # is a special device file in UNIX that acts as a black hole:
+	# it discards anything written to it :O
