@@ -18,6 +18,8 @@
 cd /var/log/messages
 cd /var/log/syslog
 
+# !! from macOS 10.12+, the logger sends the message to the Apple System Logger (ASL)
+
 # Logging with the logger utility
 # By default, it creates user.notice messages
 # 				   [facility].[severity]
