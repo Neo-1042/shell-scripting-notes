@@ -51,4 +51,3 @@ function logit() {
 logit crit The environment variable is not properly defined
 logit INFO "Processing data."
 ===================================================================================================
-# Exercise 1
