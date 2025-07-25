@@ -101,4 +101,15 @@ while true; do
 done
 ===================================================================================================
 # CONTINUE: skip this iteration and continue with the execution of the loop
+# List 1 mysql database per line of output, which is piped into the while loop
 
+mysql -BNe 'show databases' | while read DB
+do
+	db-backed-up-recently $DB
+	if [ "$?" -eq "0" ] ; then
+		continue
+	fi
+	backup $DB
+done
+===================================================================================================
+# Go to loops-exercises.sh
