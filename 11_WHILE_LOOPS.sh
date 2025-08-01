@@ -112,4 +112,12 @@ do
 	backup $DB
 done
 ===================================================================================================
+# Choosing the right method for grouping the conditions:
+
+[[ ... ]] # General-purpose scripting in modern Bash
+[ ... ] # Maximum portability across different shells
+(( $a < $b )) # For purely numerical conditions
+
+
+===================================================================================================
 # Go to loops-exercises.sh

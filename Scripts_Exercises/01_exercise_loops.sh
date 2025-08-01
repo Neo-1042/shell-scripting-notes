@@ -11,5 +11,3 @@ while read LINE; do
 done < /etc/passwd
 
 echo "END"
-
-# [E2]

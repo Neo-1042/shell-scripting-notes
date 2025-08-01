@@ -15,12 +15,28 @@
 [ -n STRING ] # TRUE if STRING is NOT empty
 
 # Comparisson operators
-[ a -eq b ] # a == b
-[ a -ne b ] # a != b
-[ a -lt b ] # a < b
-[ a -gt b ] # a > b
-[ a -le b ] # a <= b
-[ a -ge b ] # a >= b
+[ $a -eq $b ] # a == b
+[ $a -ne $b ] # a != b
+[ $a -lt $b ] # a < b
+[ $a -gt $b ] # a > b
+[ $a -le $b ] # a <= b
+[ $a -ge $b ] # a >= b
+
+# Arithmetic expansion is preferred
+(( a < b ))
+(( a == b ))
+(( a >= b ))
+(( a > b ))
+(( a <= b ))
+
+
+i=0 ; j=10
+
+while (( $i < 5 && $j > 5 )) ; do
+	echo "i is $i and j is $j"
+	((i++))
+	((j++))
+done
 
 ###################################################################################################
 # IF statement
