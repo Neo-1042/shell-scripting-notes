@@ -15,10 +15,10 @@ LINE_COUNTER=1
 
 # Arithmetic Expansion
 # (( $a < $b )) ---> For purely numerical conditions. Use the '$' to prevent errors
-while (( $LINE_COUNTER <= $USER_LINES )) # read LINE 
+while [[ $(read LINE) && $LINE_COUNTER -le $USER_LINES ]]  
 do
-	echo "Line: ${LINE_COUNTER} ${LINE}"
+	echo "Line: ${LINE_COUNTER} . L from file: ${LINE}"
 	((LINE_COUNTER++))
-done < /etc/passwd
+done < /Users/rafael1642/GIT/Notes/shell-scripting-notes/Scripts_Exercises/texto_prueba.txt
 
 echo "END"

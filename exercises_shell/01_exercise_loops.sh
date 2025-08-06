@@ -8,6 +8,6 @@ LINE_NUM=1
 while read LINE; do
 	echo "${LINE_NUM} : $LINE"
 	((LINE_NUM++))
-done < /etc/passwd
+done < /Users/rafael1642/GIT/Notes/shell-scripting-notes/Scripts_Exercises/texto_prueba.txt
 
 echo "END"
