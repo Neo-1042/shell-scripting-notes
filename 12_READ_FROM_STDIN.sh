@@ -33,12 +33,25 @@ echo "END"
 # -e  : use Readline to handle input. This permits input editing in the same manner as the command line
 # -r  : raw mode. Do not interpret \n or \t and so on.
 # -s  : silent mode (passwords)
-# -ei string1 : Use string1 as default reply if the user simply presses ENTER.
+# -i string1 : Use string as a default reply if the user simply presses ENTER (-e is required)
+# WATCH OUT: -i is NOT A STANDARD SHELL FEATURE: it's a bash-specific extension that only
+# works if Bash was compiled with readline support
 # -t seconds : timeout. Terminate input after <seconds> seconds.
 
+###################################################################################################
+# Read secret (-s: silent) and timed (-t) example:
+#!/bin/bash
+
+if read -t 10 -sp "Enter secret passphrase:  " secret_pass ; then
+	echo -e "\nSecret passphrase = '${secret_pass}'"
+else
+	echo -e "\nInput timed out" >&2
+	exit 1
+fi
 
 
 
 ###################################################################################################
 # Side note: if umask = 0022, files with 'touch' are created with '544' permissions (rw-r--r--)
 # Running "chmod +x file.sh", permissions will transform to '755', I think it's better to have '750'
+###################################################################################################
