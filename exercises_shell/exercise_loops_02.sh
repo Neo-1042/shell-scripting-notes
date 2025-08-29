@@ -15,10 +15,11 @@ LINE_COUNTER=1
 
 # Arithmetic Expansion
 # (( $a < $b )) ---> For purely numerical conditions. Use the '$' to prevent errors
-while [[ $(read LINE) && $LINE_COUNTER -le $USER_LINES ]]  
+# TO DO: How to put together the output of the read command with an arithmetic comparisson?
+while [[ read LINE && $LINE_COUNTER -le $USER_LINES ]]  
 do
 	echo "Line: ${LINE_COUNTER} . L from file: ${LINE}"
 	((LINE_COUNTER++))
-done < /Users/rafael1642/GIT/Notes/shell-scripting-notes/Scripts_Exercises/texto_prueba.txt
+done < /Users/rafael1642/GIT/Notes/shell-scripting-notes/exercises_shell/texto_prueba.txt
 
 echo "END"

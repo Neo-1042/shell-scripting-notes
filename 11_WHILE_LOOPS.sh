@@ -129,4 +129,16 @@ while IFS= read -r line; do # -r : raw
 	printf '%s\n' "$line"
 done < <(cat /Users/rafael1642/GIT/Notes/shell-scripting-notes/exercises_shell/texto_prueba.txt)
 ===================================================================================================
+
+read -p "Enter a number of lines to be displayed: " USER_LINES
+
+while read LINE ; do
+	echo "READING FROM FILE"
+	
+
+
+
+
+
+===================================================================================================
 # Go to loops-exercises.sh
