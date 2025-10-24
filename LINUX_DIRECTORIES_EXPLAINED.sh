@@ -47,6 +47,9 @@ cd /etc/network/ ; cd /etc/systemd/ ; cd /etc/opt/
 	tmp
 	usr
 	var
+# Example: 
+# The DB server of MySQL is installed in: /usr/local/mysql/support-files/mysql.server
+
 
 # /bin/ -> usr/bin => Contains commands used by the system administrator and users
 # 	  There must be no subdirectories under /bin/

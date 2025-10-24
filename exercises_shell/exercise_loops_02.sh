@@ -18,7 +18,7 @@ LINE_COUNTER=1
 # TO DO: How to put together the output of the read command with an arithmetic comparisson?
 while [[ read LINE && $LINE_COUNTER -le $USER_LINES ]]  
 do
-	echo "Line: ${LINE_COUNTER} . L from file: ${LINE}"
+	echo "Line: ${LINE_COUNTER} . Line from file: ${LINE}"
 	((LINE_COUNTER++))
 done < /Users/rafael1642/GIT/Notes/shell-scripting-notes/exercises_shell/texto_prueba.txt
 
