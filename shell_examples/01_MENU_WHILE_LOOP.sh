@@ -2,11 +2,12 @@
 
 echo "============================================================================"
 echo "A menu-driven system information program"
+echo "v2"
 echo "============================================================================"
 
 DELAY=3 # Number of seconds to display results
 
-while [[ "$REPLY" != 0 ]]; do
+while true; do
 	clear
 	cat <<- _EOF_
 		Please Select:
@@ -22,10 +23,12 @@ while [[ "$REPLY" != 0 ]]; do
 			echo "Hostname = $(hostname)"
 			uptime
 			sleep "$DELAY"
+			continue
 		fi
 		if [[ "$REPLY" == 2 ]]; then
 			df -h # Disk free -human readable
 			sleep "$DELAY"
+			continue
 		fi
 		if [[ "$REPLY" == 3 ]]; then
 			if [[ "$(id -u)" -eq 0 ]]; then
@@ -36,6 +39,10 @@ while [[ "$REPLY" != 0 ]]; do
 				du -sh "$HOME" # Operation not permitted
 			fi
 			sleep "$DELAY"
+			continue
+		fi
+		if [[ "$REPLY" == 0 ]]; then
+			break
 		fi
 	else
 		echo "Invalid entry"
