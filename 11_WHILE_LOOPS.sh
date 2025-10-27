@@ -136,9 +136,35 @@ while read LINE ; do
 	echo "READING FROM FILE"
 	
 
-
-
-
-
 ===================================================================================================
-# Go to loops-exercises.sh
+# Source: "The Linux Command Line" - William Shotts
+# Chapter 29: FLOW CONTROL: LOOPING WITH WHILE/UNTIL
+
+# Construct a program to repeat a menu display until the user chooses
+# to exit the program.
+
+#!/bin/bash
+
+# while-count: display a series of numbers
+
+COUNT=1
+
+while [[ "$COUNT" -le 5 ]]; do
+	echo "$COUNT"
+	COUNT=$((COUNT + 1))
+done
+echo "Finished"
+
+# The general syntax of the WHILE loop is the following:
+while <commands1>; do
+	<commands2>
+done
+
+# Like 'if', 'while' evaluates the exit status of a list of commands.
+# As long as the exit status == 0, it performs the commands inside the loop.
+# The 'while' command evaluates the exit status of the
+#    [[]] compound command.
+# At the end of each cycle, the [[]] is repeated and its exit status evaluated
+# once more. 
+# In the previous example, when COUNT hits 5, the command
+[[ "$COUNT" -le 5 ]] # Returns 1
