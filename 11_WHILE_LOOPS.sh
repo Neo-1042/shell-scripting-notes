@@ -168,3 +168,7 @@ done
 # once more. 
 # In the previous example, when COUNT hits 5, the command
 [[ "$COUNT" -le 5 ]] # Returns 1
+===================================================================================================
+# See example "shell_examples/01_MENU_WHILE_LOOP.sh"
+echo "END"
+===================================================================================================

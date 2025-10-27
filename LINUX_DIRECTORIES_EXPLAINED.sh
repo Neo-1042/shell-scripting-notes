@@ -84,6 +84,10 @@ cd /etc/network/ ; cd /etc/systemd/ ; cd /etc/opt/
 #     Historically, it was meant to host servers inside of your Linux system.
 #     e.g. An FTP/HTTP server
 # /tmp/ => Must be available for programs that require temporary files
+# /var/ => Usually, log files go in here.
+#	  e.g. /var/log/lastlog  --> Stores user's last login info
+#     e.g. /var/log/messages --> Contains all the global system messages
+#     e.g. /var/log/wtmp     --> Keeps a history of login and logout information
 =========================================================================================
 /dev/null # is a special device file in UNIX that acts as a black hole:
 	# it discards anything written to it :O
