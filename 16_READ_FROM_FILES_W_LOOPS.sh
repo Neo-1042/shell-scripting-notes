@@ -7,7 +7,7 @@ while read distro version release; do
 		"$distro" \
 		"$version" \
 		"$release"
-done < distros.txt # The redirection operator '<' feeds the while loop.
+done < file_samples/distros.txt # The redirection operator '<' feeds the while loop.
 # The loop will use 'read' to input the fields from the redirected file.
 # The 'read' command will exit after each line is read, with a
 # 0 (zero) EXIT STATUS until the 'end-of-file' is reached.

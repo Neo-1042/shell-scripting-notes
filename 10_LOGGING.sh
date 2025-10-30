@@ -27,7 +27,7 @@ logger "Message"
 logger -p local10.info "Message" # -p = priority
 logger -t myscript -p local0.info "Message" # -t = tag (mark every line in the log with the specified tag)
 logger -i -t myscript "Message" # -i = id (process id is included in the log messages)
-logger -f /var/rafainc/logs/logger_rrhg.log -f # Read the contents of the specified file into syslog
+logger -f /var/rafainc/logs/logger_rrhg.log # Read the contents of the specified file into syslog
 
 logger -p local0.notice -t HOSTIDM -f /dev/idmc
 
