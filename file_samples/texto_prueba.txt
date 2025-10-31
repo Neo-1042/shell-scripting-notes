@@ -1,6 +1,7 @@
 Pokémon
 Mario Bros
 Zelda
+Ditto
 Pikachu
 Lucario
 CODsito
