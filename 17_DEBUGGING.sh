@@ -38,3 +38,67 @@ echo "END"
 
 help set | less
 # help <command> | less
+#########################################################
+#########################################################
+# Using variables for debugging
+# Manually debug a script
+# Syntax highlighting
+# Windows / Linux file types
+
+# Example 1:
+#!/bin/bash
+
+DEBUG=true
+
+if $DEBUG ; then
+	echo "Debug Mode ON"
+else
+	echo "Debug Mode OFF"
+fi
+
+# Example 2 (equivalent as E1)
+#!/bin/bash
+
+DEBUG=true
+
+$DEBUG && echo "Debug mode ON"
+
+DEBUG=false
+
+$DEBUG || echo "Debug mode OFF"
+
+# Example 3. Use 'echo' as a variable for debugging
+
+#!/bin/bash
+DEBUG="echo"
+
+$DEBUG ls
+
+# Example 4. debug()
+#!/bin/bash
+
+function debug() {
+	echo "Executing: $@" # Access all parameters passed to the function
+	$@
+}
+
+debug ls
+
+# Manual debugging:
+# set -x
+# Copy, paste and execute every single command of the script.
+################################################
+# PS Environment variables
+$PS1 # Controls what is displayed for your terminal prompt
+
+$PS4 # Controls what is displayed before a line when using the "-x" option
+# The default value is "+"
+
+rafael1642@MacBook-Air-de-Rafael shell-scripting-notes % set -x                                                                           
+rafael1642@MacBook-Air-de-Rafael shell-scripting-notes % echo "hola"                                                                      
++/bin/zsh:15> echo hola
+hola
+
+# BASH VARIABLES
+BASH_SOURCE # The name of the script itself
+LINENO # Line number of the script

@@ -84,6 +84,7 @@ cd /etc/network/ ; cd /etc/systemd/ ; cd /etc/opt/
 #     Historically, it was meant to host servers inside of your Linux system.
 #     e.g. An FTP/HTTP server
 # /tmp/ => Must be available for programs that require temporary files
+# /usr/ => contains most of read-only applications, libraries and files
 # /var/ => Usually, log files go in here.
 #	  e.g. /var/log/lastlog  --> Stores user's last login info
 #     e.g. /var/log/messages --> Contains all the global system messages
