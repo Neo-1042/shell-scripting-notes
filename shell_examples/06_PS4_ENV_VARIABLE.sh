@@ -11,6 +11,6 @@ function debug() {
 	$@
 }
 
-debug ls kill mailx
+debug ls
 
 echo "END"

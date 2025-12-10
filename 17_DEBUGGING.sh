@@ -7,7 +7,7 @@
 # set -x
 # set +x # To stop debugging
 #########################################################
-# DEBUGGING WITH THE SHELL EXAMPLE (mind the shebang)
+# DEBUGGING WITH THE SHELL EXAMPLE (mind the shebang at the beginning)
 
 TEST_VAR="test"
 echo "$TEST_VAR"
@@ -33,8 +33,8 @@ echo "END"
 # -v : verbose
 # prints everything before "${FOO}/*" substitution or expansion
 # -x : x trace (DEBUG mode)
-# Combining -xe will show exactly how a command is written vs how it is
-# actually EXECUTED. Nice.
+# Combining -vx will show exactly how a command is written vs
+# how it is actually EXECUTED. Nice.
 
 help set | less
 # help <command> | less
@@ -52,8 +52,10 @@ DEBUG=true
 
 if $DEBUG ; then
 	echo "Debug Mode ON"
+	set -x
 else
 	echo "Debug Mode OFF"
+	set +x
 fi
 
 # Example 2 (equivalent as E1)
@@ -100,5 +102,28 @@ rafael1642@MacBook-Air-de-Rafael shell-scripting-notes % echo "hola"
 hola
 
 # BASH VARIABLES
-BASH_SOURCE # The name of the script itself
-LINENO # Line number of the script
+$BASH_SOURCE # The name of the script itself
+$LINENO # Line number of the script
+################################################
+# Enabling x trace + setting a custom PS4 value
+#!/bin/bash -x
+PS4='+ ${BASH_SOURCE} : ${LINENO} : ${FUNCNAME[0]}()'
+TEST_VAR="CODsito"
+echo "$TEST_VAR"
+
+function debug() {
+	echo "Executing: $@"
+	$@
+}
+debug ls
+
+################################################
+# CR/LF -> Windows
+# LF -> Linux, macOS
+
+cat -v script.sh # Shows the CR/LF characters as ^M
+
+file script.sh
+
+dos2unix script.sh # Converts a DOS file into a UNIX file
+unix2dos script.sh # Converts a UNIX file into a DOS file

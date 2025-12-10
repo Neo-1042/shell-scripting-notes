@@ -7,7 +7,5 @@ grep -i "ANTES" | /path/to/file.txt
 grep -c "ANTES" | /path/to/file.txt
 
 
-
-
 # Find out which users belong to a given group
 getent group webgroupx
