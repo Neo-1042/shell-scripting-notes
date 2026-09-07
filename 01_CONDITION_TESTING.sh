@@ -22,7 +22,7 @@
 [ $a -le $b ] # a <= b
 [ $a -ge $b ] # a >= b
 
-# Arithmetic expansion is preferred
+# Arithmetic expansion is preferred (check POSIX compatibility)
 (( a < b ))
 (( a == b ))
 (( a >= b ))
@@ -40,15 +40,18 @@ done
 
 ###################################################################################################
 # IF statement
-if [ condition-1 ]
+if [ condition_1 ]
 then
-	<command1>
-	<command2>
-	<command3>
-elif [ condition-2 ]
+	<command_1>
+	<command_2>
+	<command_3>
+elif [ condition_2 ]
 then
 	<command4>
+elif [ condition_3 ]
+then
+	<command_5>
 else
-	<command5>
+	<command_6>
 fi
-
+###################################################################################################
