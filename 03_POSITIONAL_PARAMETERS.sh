@@ -2,7 +2,7 @@
 
 $ script.sh parameter1 parameter2 parameter3
 
-# $0 = script.sh
+# $0 = this-script.sh
 # $1 = parameter1
 # $2 = parameter2
 # $3 = parameter3
@@ -15,10 +15,13 @@ echo "Archiving user = $USER"
 # Lock the account
 passwd -l $USER
 
-# Create an archive of the home directory
+# Create an archive of the home directory of each user
 tar -cf /archives/${USER}.tar.gz /home/${USER}
 
-# Access all the positional parameters from $1 ... $N (last positional parameter)
+# This approach makes use of the current user executing the script:
+tar -cf /archives/$(whoami).tar.gz /home/$(whoami)
+
+# $@ --> To access all the positional parameters from $1 ... $N (last positional parameter)
 
 for USER in $@
 do
