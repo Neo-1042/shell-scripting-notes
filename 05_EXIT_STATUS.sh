@@ -4,7 +4,7 @@
 # Every command returns an EXIT STATUS
 # 0 = SUCCESS
 # 1-255 ERROR
-# Use 'man' or 'info' to find out meaning of exit status
+# Use 'man' or 'info' to find out the meaning of each exit status
 
 # The special variable $? contains the return code of the previously executed command
 echo "$?"
@@ -24,6 +24,7 @@ fi
 ###################################################################################################
 # && = AND
 # || = OR
+# These operators are used to execute commands depending on exit conditions.
 ###################################################################################################
 # Execute the cp command only if the first command SUCCEEDS
 mkdir /tmp/bak/ && cp test.txt /tmp/bak/ 
@@ -35,7 +36,7 @@ ping -c 1 $HOST || echo "Host $HOST is unreachable"
 
 echo "command 1" ; echo "command 2"
 
-# Shell scripts also return exit status:
+# Shell scripts themselves also return exit status:
 
 EXIT 0
 EXIT 1
@@ -45,7 +46,9 @@ EXIT 255
 
 # If no EXIT status is specified, the exit status code of the last executed command is returned.
 
-ping -c 1 -w 1 amazon.com # Timeout = 1 second
+ping -c 1 -w 1 amazon.com # Timeout = 1 second (only on Linux)
+ping -c 1 -W 1000 amazon.com # macOS. Timeout = 1000 ms = 1 s.
+
 ping -c 1 amazon.com.bluxd # Exit status = 2
 man ping
 ###################################################################################################
@@ -65,7 +68,9 @@ exit 0
 
 # Exercise 2
 # Accept a file or directory name as an argument. Have the script report if it is a 
-# regular file (exit status 0), a directory (1), or other type of file (2)
+# 0 = regular file,
+# 1 = directory
+# 2 = other type
 read -p "Give me a file or directory name:" NAME
 
 # -f : regular file exists
