@@ -6,7 +6,7 @@
 # A character or a string used for pattern matching
 # Wildcards are also called 'glob' or 'glob patterns'
 
-# Globbing = the act the wildcard pattern into a list of files and/or directories
+# Globbing = the act of transforming a wildcard pattern into a list of files and/or directories
 
 # Wildcards can be used with most commands (ls, rm, cp, etc.)
 
@@ -30,10 +30,10 @@ ca[nt]* # can, cat, candy, catch
 [a-g]* # Matches all files that start with a,b,c,d,e,f or g.
 [3-6]* # Matches all files that start with 3,4,5 or 6
 
-# Pre-defined named character classes:
+# Pre-defined NAMED CHARACTER CLASSES:
 [[:alpha:]] # a-z or A-Z
 [[:digit:]] # 0-9
-[[:alnum:]] # a-z or A-Z and 0-9
+[[:alnum:]] # (a-z or A-Z) and 0-9
 [[:lower:]] # a-z
 [[:upper:]] # A-Z
 [[:space:]] # spaces, tabs and new line characters
@@ -93,9 +93,9 @@ do
 	echo "Copying $FILE ..."
 	cp $FILE /var/www-just-html
 done
-####################################################
+##############################################################
 touch test.html # cp NUL > C:\Folder\test.html | WINDOWS CMD
-####################################################
+##############################################################
 # The command:
 date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
 # will display:
@@ -131,4 +131,3 @@ shopt -u nullglob
 shopt -s nullglob # set
 shopt -u nullglob # unset
 ###################################################################################################
-# Exercise 2

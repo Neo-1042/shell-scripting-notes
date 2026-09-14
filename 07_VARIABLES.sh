@@ -1,6 +1,8 @@
 # GLOBAL VARIABLES
+# 
+# 20260914 Review:
 # By default, all variables are GLOBAL
-# Variables must be defined befored used
+# Variables MUST be defined befored used (nice).
 
 GLOBAL_VAR=1
 my_function # GLOBAL_VAR is available
@@ -14,7 +16,6 @@ foo # GLOBAL_VAR2 is now available
 # Only functions can have local variables
 # Can only be accessed within the function
 # Good practice: use 'local' only within functions
-
 
 # Create using the 'local' keyword
 function locals_demo() {
@@ -40,11 +41,11 @@ function bar() {
 function backup_file() {
 	if [ -f $1 ]
 	then
-		local BACK="/tmp/$(basename ${1}).$(date +%F).$$" # PID
+		local BACK="/tmp/$(basename ${1}).$(date +%F).$$" # Based on the PID
 		echo "Backing up $1 to ${BACK}"
 		cp $1 $BACK
 	else
-		# The file does not exist
+		# The file does not exist or $1 is not a file
 		exit 1
 	fi
 }
@@ -58,5 +59,6 @@ else
 	exit 1
 fi
 
-# $$ = PID. If the script runs multiple times on the same day, the name will be different, since
-# the PID will be different.
+# $$ = PID. 
+# If the script runs multiple times on the same day, the name will be different,
+# since the PID will be different.

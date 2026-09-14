@@ -40,6 +40,8 @@ case "$1" in
 esac
 # If there are no matches, the case statement will not execute, and the script will simply continue
 
+# BOOKMARK 20260914
+
 # The next example will use the wildcard pattern *) to match anything:
 # Anything other than 'start' or 'stop' will go to the wildcard
 # start|START => The pipe | is used as an OR for the patterns,

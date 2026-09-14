@@ -1,13 +1,12 @@
 #!/bin/bash
 
 # Shell scripts are read and interpreted from top to bottom
-# Good practice: declare and define all of your functions at the top of the script
+# Good practice: declare and define all of your functions at the TOP of the SCRIPT
 
 # Don't repeat yourself = DRY
-# Function = a block of a reusable code that performs an action and returns an exit status code
+# Function = a block of a reusable code that performs an action and returns an exit status code.
 
 # Create a function
-
 # 1
 function function_name() {
 	# This is the first way to declare a function
