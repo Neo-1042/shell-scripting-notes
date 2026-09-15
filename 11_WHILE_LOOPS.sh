@@ -8,8 +8,7 @@ do
 done
 
 # If and only if the command returns an EXIT STATUS = 0 (SUCCESS), then execute the code inside the DO
-while [ $(command) ] 
-do
+while [ $(command) ] ; do
 	command1
 	command2
 	command3
@@ -84,6 +83,7 @@ do
 done
 ===================================================================================================
 # BREAK: Exit a LOOP before its normal ending use, but it does not end the script
+# BOOKMARK: 20260915
 
 while true; do
 	read -p "1: Show disk usage. 2: Show uptime." CHOICE
