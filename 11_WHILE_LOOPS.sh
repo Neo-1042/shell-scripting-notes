@@ -81,9 +81,17 @@ do
 	echo "${FS_NUM}: mount point: ${MP}"
 	((FS_NUM++))
 done
+
+COUNTER=0
+grep string_x /var/logs/my_CRON_$(date "+%Y_%m_%d").log | while read A B REST
+do
+	echo "${COUNTER} --- ${A} first found"
+	echo "${COUNTER} --- ${B} second found"
+	echo "The rest: ${REST}"
+	((COUNTER++))
+done
 ===================================================================================================
 # BREAK: Exit a LOOP before its normal ending use, but it does not end the script
-# BOOKMARK: 20260915
 
 while true; do
 	read -p "1: Show disk usage. 2: Show uptime." CHOICE
@@ -122,8 +130,8 @@ done
 ===================================================================================================
 # PROCESS SUBSTITUTION (:O)
 
-# Process substitution is a feature that allows you to use the output from a command as
-# an input file for the while-read construct
+# Process substitution is a feature that allows you to use the output from a command
+# as an INPUT FILE for the while-read construct.
 
 while IFS= read -r line; do # -r : raw
 	printf '%s\n' "$line"
@@ -134,7 +142,7 @@ read -p "Enter a number of lines to be displayed: " USER_LINES
 
 while read LINE ; do
 	echo "READING FROM FILE"
-	
+done	
 
 ===================================================================================================
 # Source: "The Linux Command Line" - William Shotts
@@ -172,3 +180,4 @@ done
 # See example "shell_examples/01_MENU_WHILE_LOOP.sh"
 echo "END"
 ===================================================================================================
+# 20260916: Process substitution is not clear for me yet, GOTO "19_PROCESS_SUBSTITUTION.sh"
