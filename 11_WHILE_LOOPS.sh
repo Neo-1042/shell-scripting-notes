@@ -15,7 +15,7 @@ while [ $(command) ] ; do
 done
 
 # In some cases, you want an infinite loop:
-# For example, when you want to setup a service or daemon
+# For example, when you want to setup a SERVICE or DAEMON
 
 while true
 do
@@ -71,6 +71,13 @@ grep xfs /etc/fstab | while read LINE
 do
 	echo "xfs: ${LINE}"
 done
+# 20260927 review: Is this last code snippet the same as this?
+# NO: ERROR
+while read LINE
+do
+	echo "xfs: ${LINE}"
+done < grep xfs /etc/fstab # !!!
+# This operators "< >" are used strictly for file redirection
 ===================================================================================================
 # The read command can read from multiple variables:
 
@@ -91,6 +98,7 @@ do
 	((COUNTER++))
 done
 ===================================================================================================
+# BOOKMARK 20260927
 # BREAK: Exit a LOOP before its normal ending use, but it does not end the script
 
 while true; do
