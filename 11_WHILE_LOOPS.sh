@@ -98,9 +98,7 @@ do
 	((COUNTER++))
 done
 ===================================================================================================
-# BOOKMARK 20260927
 # BREAK: Exit a LOOP before its normal ending use, but it does not end the script
-
 while true; do
 	read -p "1: Show disk usage. 2: Show uptime." CHOICE
 	case "$CHOICE" in
@@ -119,8 +117,7 @@ done
 # CONTINUE: skip this iteration and continue with the execution of the loop
 # List 1 mysql database per line of output, which is piped into the while loop
 
-mysql -BNe 'show databases' | while read DB
-do
+mysql -BNe 'show databases' | while read DB ; do
 	db-backed-up-recently $DB
 	if [ "$?" -eq "0" ] ; then
 		continue
@@ -130,11 +127,9 @@ done
 ===================================================================================================
 # Choosing the right method for grouping the conditions:
 
-[[ ... ]] # General-purpose scripting in modern Bash
-[ ... ] # Maximum portability across different shells
+[[ ... ]] # General-purpose scripting in modern Bash.
+[ ... ] # Maximum portability across different shells.
 (( $a < $b )) # For purely numerical conditions
-
-
 ===================================================================================================
 # PROCESS SUBSTITUTION (:O)
 
@@ -145,13 +140,12 @@ while IFS= read -r line; do # -r : raw
 	printf '%s\n' "$line"
 done < <(cat /Users/rafael1642/GIT/Notes/shell-scripting-notes/exercises_shell/texto_prueba.txt)
 ===================================================================================================
-
 read -p "Enter a number of lines to be displayed: " USER_LINES
 
 while read LINE ; do
 	echo "READING FROM FILE"
-done	
-
+done
+# (Incomplete)
 ===================================================================================================
 # Source: "The Linux Command Line" - William Shotts
 # Chapter 29: FLOW CONTROL: LOOPING WITH WHILE/UNTIL
@@ -179,11 +173,10 @@ done
 # Like 'if', 'while' evaluates the exit status of a list of commands.
 # As long as the exit status == 0, it performs the commands inside the loop.
 # The 'while' command evaluates the exit status of the
-#    [[]] compound command.
-# At the end of each cycle, the [[]] is repeated and its exit status evaluated
-# once more. 
+#    [[ ]] compound command.
+# At the end of each cycle, the [[ ]] is repeated and its exit status evaluated once more. 
 # In the previous example, when COUNT hits 5, the command
-[[ "$COUNT" -le 5 ]] # Returns 1
+[[ "$COUNT" -le 5 ]] # Returns 1, thus terminating the loop execution.
 ===================================================================================================
 # See example "shell_examples/01_MENU_WHILE_LOOP.sh"
 echo "END"
