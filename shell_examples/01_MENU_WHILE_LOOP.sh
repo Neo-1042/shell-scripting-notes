@@ -2,10 +2,18 @@
 
 echo "============================================================================"
 echo "A menu-driven system information program"
-echo "v2"
+echo "v3"
 echo "============================================================================"
+echo "UID = $(id -u)"
+echo "."
+sleep 1
+echo ".."
+sleep 1
+echo "..."
+sleep 1
 
-DELAY=3 # Number of seconds to display results
+
+DELAY=4 # Number of seconds to display results
 
 while true; do
 	clear
@@ -17,7 +25,7 @@ while true; do
 		3. Display Home Space Utilization
 		0. QUIT
 	_EOF_
-	read -p "Enter Selection [0-3] > "
+	read -p "Enter Selection [0-3] > " REPLY
 	if [[ "$REPLY" =~ ^[0-3]$ ]]; then
 		if [[ "$REPLY" == 1 ]]; then
 			echo "Hostname = $(hostname)"
@@ -36,7 +44,7 @@ while true; do
 				du -sh /home/* # Operation not permitted
 			else
 				echo "Home Space Utilization ($USER)"
-				du -sh "$HOME" # Operation not permitted
+				du -sh "$HOME/GIT"
 			fi
 			sleep "$DELAY"
 			continue
