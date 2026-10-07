@@ -3,7 +3,7 @@
 # UNTIL demo. Display a series of numbers
 
 # Reminder:
-read -p "Hello, user. Enter a number from 3 to 20: " # is saved in ${REPLY}
+read -p "Hello, user. Enter a number from 3 to 20: " # This input is saved in ${REPLY}
 
 COUNTER=1
 

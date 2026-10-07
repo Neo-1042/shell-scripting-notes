@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ksh
 
 # 1] LOGIN SHELL ($SHELL == /bin/zsh)
 # 2] CURRENT SHELL FILE ($0 == ./13_SHELL_THEORY.sh)
@@ -18,5 +18,7 @@
 
 echo "The env variable SHELL = ${SHELL}" # /bin/zsh 
 echo "This script is running in: $0" # ./13_SHELL_THEORY.sh
-echo "Process reports shell as: $(ps -p $$ -o comm=)" # /bin/bash 
+echo "The process reports shell as: $(ps -p $$ -o comm=)" # /bin/bash 
 # $$ = Process ID
+
+# 20261007 review: Login Shell = ${SHELL} + current shell file = $0 + shebang interpreter=$(ps -p $$ -o comm=)
