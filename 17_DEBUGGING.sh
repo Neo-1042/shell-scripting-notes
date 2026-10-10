@@ -35,6 +35,8 @@ echo "END"
 # -x : x trace (DEBUG mode)
 # Combining -vx will show exactly how a command is written vs
 # how it is actually EXECUTED. Nice.
+# 20261009 Review
+set -vx # Show exactly how a command is written vs how it is executed.
 
 help set | less
 # help <command> | less
@@ -81,6 +83,8 @@ $DEBUG ls
 
 function debug() {
 	echo "Executing: $@" # Access all parameters passed to the function
+	# Why would you pass a command to a function? Not very useful, I think
+	# I think it's more useful to simply run with set -xev
 	$@
 }
 
@@ -89,9 +93,10 @@ debug ls
 # Manual debugging:
 # set -x
 # Copy, paste and execute every single command of the script.
-################################################
+######################################################################
 # PS Environment variables
 $PS1 # Controls what is displayed for your terminal prompt
+# The default value is "\s-\v\$"
 
 $PS4 # Controls what is displayed before a line when using the "-x" option
 # The default value is "+"
@@ -118,10 +123,13 @@ function debug() {
 debug ls
 
 ################################################
+# BOOKMARK 20261009
 # CR/LF -> Windows
 # LF -> Linux, macOS
 
 cat -v script.sh # Shows the CR/LF characters as ^M
+# REMINDER: 20261009
+cat -v windows.cmd
 
 file script.sh
 
