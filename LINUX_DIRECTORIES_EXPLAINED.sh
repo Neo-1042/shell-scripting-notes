@@ -1,9 +1,11 @@
 # RHEL = Red Hat Enterprise Linux
+# 20261015
 
 cd /opt/ # Optional application software packages
 # Contains add-on application software packages that are not part of the core OS
 # Used by third-party vendors to install their software in a self-contained directory
 # e.g. /opt/google/
+# 	   /opt/IBM/
 
 cd /etc/opt/ # Configuration files for /opt/ applications
 # Stores configuration files for applications installed in /opt/
@@ -48,9 +50,9 @@ cd /etc/network/ ; cd /etc/systemd/ ; cd /etc/opt/
 	usr
 	var
 # Example: 
-# The DB server of MySQL is installed in: /usr/local/mysql/support-files/mysql.server
+# The DB server of MySQL is installed in: /usr/local/mysql/support-files/mysql.server start
 
-
+# BOOKMARK 20261015
 # /bin/ -> usr/bin => Contains commands used by the system administrator and users
 # 	  There must be no subdirectories under /bin/
 # 	  Shells are located in here9

@@ -122,8 +122,7 @@ function debug() {
 }
 debug ls
 
-################################################
-# BOOKMARK 20261009
+########################################################################
 # CR/LF -> Windows
 # LF -> Linux, macOS
 
@@ -133,5 +132,7 @@ cat -v windows.cmd
 
 file script.sh
 
+# Reminder 20261015
 dos2unix script.sh # Converts a DOS file into a UNIX file
 unix2dos script.sh # Converts a UNIX file into a DOS file
+########################################################################
