@@ -1,5 +1,5 @@
 # RHEL = Red Hat Enterprise Linux
-# 20261015
+# Review: 20261015
 
 cd /opt/ # Optional application software packages
 # Contains add-on application software packages that are not part of the core OS
@@ -52,10 +52,9 @@ cd /etc/network/ ; cd /etc/systemd/ ; cd /etc/opt/
 # Example: 
 # The DB server of MySQL is installed in: /usr/local/mysql/support-files/mysql.server start
 
-# BOOKMARK 20261015
-# /bin/ -> usr/bin => Contains commands used by the system administrator and users
-# 	  There must be no subdirectories under /bin/
-# 	  Shells are located in here9
+# /bin/ -> usr/bin => Contains commands used by the system administrator and users.
+# 	  There must be NO SUBDIRECTORIES under /bin/
+# 	  Shells are located in here.
 # /sbin/ -> usr/bin => Contains system recovery commands
 #     e.g. fastboot, fsck (file system check and repair utility), reboot
 # /lib/ => libraries needed to run the previous binaries
@@ -73,12 +72,12 @@ cd /etc/network/ ; cd /etc/systemd/ ; cd /etc/opt/
 #     for applications are stored in here.
 # /logs/ => Logging files of the SYSLOG STANDARD
 # /lost+found/ => (EXT4) Suppose you end up with some file system corruption, and then you use
-	  fsck # file system check and repair utility, then
+fsck # file system check and repair utility, then
 #	  /lost+found/ will contain these corrupted/damaged files and folders.
 # /mnt/ => Mount point for a temporarily mounted filesystem.
 #     This directory is provided so that the system admin may temporarilly mount a filesystem
-#     as needed. For example, when you plugin a USB flash drive
-# /opt/ => Optional application software packages
+#     as needed. For example, when you plugin a USB flash drive.
+# /opt/ => Optional application software packages. Many or most third-party installations go in here.
 #	  e.g. /opt/chrome/
 # /proc/ => Contains process ID numbers
 # /run/ => Run-time variable data
@@ -86,7 +85,7 @@ cd /etc/network/ ; cd /etc/systemd/ ; cd /etc/opt/
 #     Historically, it was meant to host servers inside of your Linux system.
 #     e.g. An FTP/HTTP server
 # /tmp/ => Must be available for programs that require temporary files
-# /usr/ => contains most of read-only applications, libraries and files
+# /usr/ => contains most of read-only applications, libraries and files.
 # /var/ => Usually, log files go in here.
 #	  e.g. /var/log/lastlog  --> Stores user's last login info
 #     e.g. /var/log/messages --> Contains all the global system messages
@@ -94,3 +93,4 @@ cd /etc/network/ ; cd /etc/systemd/ ; cd /etc/opt/
 =========================================================================================
 /dev/null # is a special device file in UNIX that acts as a black hole:
 	# it discards anything written to it :O
+# Bonus: IBM AIX OS uses the Korn shell by default, thus, it does not have any of the systemd utilities that Linux has.
